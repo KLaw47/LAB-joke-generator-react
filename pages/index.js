@@ -1,3 +1,5 @@
+import RenderJoke from '../components/RenderJoke';
+
 function Home() {
   return (
     <div
@@ -9,7 +11,8 @@ function Home() {
         margin: '0 auto',
       }}
     >
-      <h1>Welcome Home!</h1>
+      <h1>JOKE</h1>
+      <RenderJoke />
     </div>
   );
 }
