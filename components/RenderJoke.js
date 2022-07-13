@@ -1,23 +1,20 @@
 import React from 'react';
-import { propTypes } from 'prop-types';
-import getJoke from '../api/jokeData';
+import { PropTypes } from 'prop-types';
 
-export default function RenderJoke({ joke }) {
-  const handleClick = () => {
-    getJoke();
-  };
+export default function RenderJoke({ btnTxt, jokeTxt }) {
   return (
     <div>
-      <h1>{joke}</h1>
-      <button type="button" onClick={handleClick}>Joke Time</button>
+      <h1>{btnTxt === 'Get a Joke' ? 'THE JOKE GOAT' : ''}</h1>
+      <h1>{jokeTxt.setup}</h1>
+      <h3>{btnTxt === 'Get another Joke' ? jokeTxt.delivery : ''}</h3>
     </div>
   );
 }
 
 RenderJoke.propTypes = {
-  joke: propTypes.string,
-};
-
-RenderJoke.defaultProps = {
-  joke: '',
+  jokeTxt: PropTypes.shape({
+    setup: PropTypes.string,
+    delivery: PropTypes.string,
+  }).isRequired,
+  btnTxt: PropTypes.string.isRequired,
 };
