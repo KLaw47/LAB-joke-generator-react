@@ -38,5 +38,5 @@ function Home() {
     </div>
   );
 }
-
+ // renderjoke takes two props, joke and btn, which change based on the terrenarysssssss
 export default Home;
